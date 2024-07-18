@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .1s linear;
+}
+
+html {
+    font-size: 50%;
+}
+
+body {
+  background-image: url('Public/watch-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.header .logo,
+.header .navbar .nav_item,
+.home .content .title,
+.home .content .description,
+.home .content .btn {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  z-index: 2;
+  background: #1b2120;
+}
+
+.header .navbar {
+  transition: right 0.5s;
+}
+
+.header .navbar #close {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.header .navbar a {
+    font-size: 1.8rem;
+    margin-right: 1.5rem;
+    color: #fff;
+}
+
+.header .navbar a:hover {
+    color: #4f5e51;
+}
+
+.company-name {
+  font-size: 4.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.header #menu {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.header .navbar #close {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* home */
+
+.home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  min-height: 100vh;
+  align-items: top;
+  justify-content: center;
+  padding-top: 10rem;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+
+.home .content .title {
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.home .content .title span {
+    text-transform: uppercase;
+    color: #b7987d;
+}
+
+@keyframes blink {
+  0%, 100% {
+      color: #fff;
+  }
+  50% {
+      color: #b7987d;
+  }
+}
+
+.home .content .description {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+  padding: 1rem 0;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1.5rem;
+  animation: blink 1s infinite;
+}
+
+.home .content .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .7rem 2.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #944328;
+    cursor: pointer;
+}
+
+.home .content .btn:hover {
+    letter-spacing: .2rem;
+}
+
+/* footer */
+
+.footer {
+    background: #1b2120;
+    color: #fff;
+    padding: 4rem 9%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer .footer-section {
+    flex: 1 1 30rem;
+    margin-bottom: 2rem;
+}
+
+.footer .footer-section h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #b7987d;
+}
+
+.footer .footer-section a {
+    display: block;
+    margin: 0.5rem 0;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.footer .footer-section a:hover {
+    color: #4f5e51;
+}
+
+.footer .footer-section p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem;
+    }
+    section {
+        padding: 2rem;
+    }
+    .footer {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header #menu {
+        display: inline-block;
+    }
+    .header .navbar {
+        position: fixed;
+        top: 0;
+        right: -105%;
+        width: 30rem;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+        transition: .5s;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        z-index: 1200;
+    }
+    .header .navbar.active {
+        right: 0;
+    }
+    .header .navbar #close {
+        display: block;
+    }
+    .header .navbar a {
+        display: block;
+        margin: 1rem 0;
+        text-align: center;
+        font-size: 3rem;
+    }
+    .home .content {
+        padding-top: 9.5rem;
+    }
+    .home .content .title {
+        font-size: 4rem;
+    }
+    .home .content .description {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
